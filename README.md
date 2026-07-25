@@ -8,6 +8,7 @@ dotfiles for arch linux system and hyprland.
 - encrypt drive
 - create better design and figure out how to make them dynamic
 - change to dot- and try and fit into one config?
+- improve security of os using ufw, etc
 - hyprland
   - dynamic themes
   - switch to quickshell instead of waybar?
