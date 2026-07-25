@@ -15,17 +15,14 @@ return {
 		dap.listeners.before.launch.dapui_config = function()
 			dapui.open()
 			vim.cmd("Neotree close")
-			vim.cmd("ToggleTerm toggle")
 		end
 		dap.listeners.before.event_terminated.dapui_config = function()
 			dapui.close()
 			vim.cmd("Neotree show")
-			vim.cmd("ToggleTerm toggle")
 		end
 		dap.listeners.before.event_exited.dapui_config = function()
 			dapui.close()
 			vim.cmd("Neotree show")
-			vim.cmd("ToggleTerm toggle")
 		end
 
 		local mason_path = vim.fn.stdpath("data") .. "/mason/packages/netcoredbg/netcoredbg"
@@ -44,7 +41,8 @@ return {
 				request = "launch",
 				stopAtEntry = true,
 				program = function()
-					return dotnet.build_dll_path()
+          vim.fn.system("dotnet build")
+          return dotnet.build_dll_path()
 					--return vim.fn.input("Path to dll: ", vim.fn.getcwd() .. "/bin/Debug/", "file")
 				end,
 			},

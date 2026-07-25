@@ -12,16 +12,16 @@ return {
 			window = {
 				mappings = {
 					["<C-b>"] = "close_window",
-					["<Esc>"] = function()
-            vim.cmd("win l")
+					["<C-n>"] = function()
+            vim.cmd("wincmd l")
 					end,
 				},
 			},
 			filesystem = {
 				window = {
 					mappings = {
-					["<Esc>"] = function()
-            vim.cmd("win l")
+					["<C-n>"] = function()
+            vim.cmd("wincmd l")
 					end,
 					},
 				},

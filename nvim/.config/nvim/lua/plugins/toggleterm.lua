@@ -25,18 +25,22 @@ return {
 		-- From terminal: move focus back to editor above
 		vim.keymap.set("t", "<C-k>", [[<C-\><C-n><C-w>k]])
 
-		-- Move around splits while staying open
-		vim.keymap.set("t", "<Esc>", "<C-\\><C-n><C-w>k", { noremap = true, silent = true })
-		vim.keymap.set("n", "<leader>t", function()
-			local term = require("toggleterm.terminal").get(1)
-			if term then
-				term:focus()
-				vim.schedule(function()
-					vim.cmd("startinsert")
-				end)
-			end
-		end, { silent = true })
-		local Terminal = require("toggleterm.terminal").Terminal
+    vim.keymap.set("n", "<leader>t", "<Cmd>ToggleTerm toggle<CR>")
+    
+    -- Used for when terminal was going to be located at the bottom of the screen
+		-- vim.keymap.set("t", "<Esc>", "<C-\\><C-n><C-w>k", { noremap = true, silent = true })
+    -- vim.keymap.set("n", "<leader>t", function()
+		-- 	local term = require("toggleterm.terminal").get(1)
+		-- 	if term then
+		-- 		term:focus()
+		-- 		vim.schedule(function()
+		-- 			vim.cmd("startinsert")
+		-- 		end)
+		-- 	end
+		-- end, { silent = true })
+	
+    -- git terminal setup
+    local Terminal = require("toggleterm.terminal").Terminal
 		local lazygit = Terminal:new({ cmd = "lazygit", hidden = true })
 
 		function _lazygit_toggle()
