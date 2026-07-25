@@ -15,14 +15,17 @@ return {
 		dap.listeners.before.launch.dapui_config = function()
 			dapui.open()
 			vim.cmd("Neotree close")
+			vim.cmd("ToggleTerm toggle")
 		end
 		dap.listeners.before.event_terminated.dapui_config = function()
 			dapui.close()
 			vim.cmd("Neotree show")
+			vim.cmd("ToggleTerm toggle")
 		end
 		dap.listeners.before.event_exited.dapui_config = function()
 			dapui.close()
 			vim.cmd("Neotree show")
+			vim.cmd("ToggleTerm toggle")
 		end
 
 		local mason_path = vim.fn.stdpath("data") .. "/mason/packages/netcoredbg/netcoredbg"
@@ -56,5 +59,12 @@ return {
 		vim.keymap.set("n", "<F10>", dap.step_over, { desc = "DAP: Step Over" })
 		vim.keymap.set("n", "<F11>", dap.step_into, { desc = "DAP: Step Into" })
 		vim.keymap.set("n", "<S-F11>", dap.step_out, { desc = "DAP: Step Out" })
+
+		vim.keymap.set(
+			"n",
+			"<leader>dt",
+			"<Cmd>lua require('neotest').run.run({strategy = 'dap'})<CR>",
+			{ noremap = true, silent = true, desc = "debug nearest test" }
+		)
 	end,
 }

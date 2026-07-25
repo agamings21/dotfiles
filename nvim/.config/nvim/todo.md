@@ -7,6 +7,7 @@
   - ~~how to close neo-tree and start debugging~~
   - ~~how to stop debugging and open back neotree~~
   - ~~debugging C# stops working after pressing F10~~
+  - how to remove edgy settings when debugging?
 - buffer tabs
   - ~~How to get tabs to work similar to vscode where :q also closes the buffer. How to keep bufferes open?~~
   - ~~what is that glitch where neotree stays open like that?~~
@@ -14,13 +15,16 @@
 - ~~create an empty buffer~~
 - ~~multiline~~
 - git integration
+  - lazygit floating toggle term?
+  - gitsigns
 - terminal
-  - how to setup windows to have file tree go down to bottom and terminal inline with editor window
-  - keymaps for switching between editor and terminal, etc.
-  - make escape key to leave terminal and back to edio
+  - ~~how to setup windows to have file tree go down to bottom and terminal inline with editor window~~
+  - ~~keymaps for switching between editor and terminal, etc.~~
+  - ~~make escape key to leave terminal and back to edio~~
 - code folding
 - nix flakes
-- how to use C# unit testing? is there a window?
+- ~~how to use C# unit testing? is there a window?~~
 - how to run other commands before debugging?
 - test ansible hcl, yaml projects 
 - ~~indent lines like from vscode~~
+- render markdown files?

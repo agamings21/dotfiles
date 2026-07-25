@@ -12,20 +12,17 @@ return {
 			window = {
 				mappings = {
 					["<C-b>"] = "close_window",
-					["<Esc>"] = function(state)
-						if vim.fn.mode() == "i" then
-							return "<Esc>"
-						end
-						vim.cmd("wincmd l")
+					["<Esc>"] = function()
+            vim.cmd("win l")
 					end,
 				},
 			},
 			filesystem = {
 				window = {
 					mappings = {
-						["<Esc>"] = function(state)
-							vim.cmd("wincmd l")
-						end,
+					["<Esc>"] = function()
+            vim.cmd("win l")
+					end,
 					},
 				},
 				filtered_items = {
