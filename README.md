@@ -13,6 +13,7 @@ dotfiles for arch linux system and hyprland.
   - dynamic themes
   - switch to quickshell instead of waybar?
   - Update manager to list how many updates there are across pkg managers. Try and use a taskbar for listing total amount.
+  - add hypridle config back
 - nvim
   - code folding
   - project specific debugging steps using lua or a make file?
