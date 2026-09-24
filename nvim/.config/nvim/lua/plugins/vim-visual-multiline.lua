@@ -9,7 +9,7 @@ return {
 		vim.g.VM_add_cursor_at_pos_no_mappings = 1
 		vim.g.VM_maps = {
 			["Find Under"] = "<C-d>",
-			["Find Subword Under"] = "<C-d>",
+		  ["Find Subword Under"] = "<leader>d",
 			["Select All"] = "<C-S-l>",
 			["Skip Region"] = "<C-k>",
 			["Remove Region"] = "<C-p>",

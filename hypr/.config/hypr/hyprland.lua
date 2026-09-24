@@ -16,6 +16,7 @@
 -- hl.env("AQ_DRM_DEVICES","/dev/dri/card1" )
 -- hl.env("WLR_DRM_DEVICES","/dev/dri/card1" )
 
+package.path = package.path .. ";.~/.dotnet/dotnet"
 hl.env("WLR_RENDERER", "gles2")
 hl.env("WLR_NO_HARDWARE_CURSORS", 1)
 hl.env("AQ_NO_MODIFIERS", 1)
@@ -37,6 +38,15 @@ hl.monitor({
 	mode = "preferred",
 	position = "auto",
 	scale = "auto",
+  disabled = true
+})
+
+hl.monitor({
+	output = "DP-5",
+	mode = "preferred",
+	position = "auto",
+	scale = "auto",
+  disabled = true
 })
 
 hl.monitor({
@@ -44,7 +54,7 @@ hl.monitor({
 	mode = "preferred",
 	position = "auto",
 	scale = "auto",
-	disabled = true,
+	-- disabled = true,
 })
 
 hl.bind(

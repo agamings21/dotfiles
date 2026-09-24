@@ -45,6 +45,16 @@ return {
 			})
 			vim.lsp.enable("lua_ls")
 
+			vim.lsp.enable("terraform_ls")
+			vim.lsp.config("terraform_ls", {
+				capabilities = capabilities,
+			})
+     
+			vim.lsp.enable("pylsp")
+			vim.lsp.config("pylsp", {
+				capabilities = capabilities,
+			})
+      
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
 			vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
 			vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, {})

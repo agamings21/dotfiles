@@ -1,3 +1,3 @@
 [[ -f ~/.zshrc ]] && . ~/.zshrc
 
-export PATH="$HOME/.dotnet:$PATH"
+# export PATH="$HOME/.dotnet:$PATH"
