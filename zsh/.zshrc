@@ -1,5 +1,3 @@
-# Set up the prompt
-eval "$(starship init zsh)"
 
 
 # setopt histignorealldups sharehistory
@@ -35,9 +33,9 @@ alias dc='docker compose'
 alias ls="ls --color=auto"
 
 # Extensions
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh   
 
 # Paths
 export PATH="${PATH}:/home/$(whoami)/.local/bin"
@@ -54,3 +52,6 @@ export XDG_CONFIG_HOME="/home/$(whoami)/.config"
 
 
 if [ -e /home/andrew/.nix-profile/etc/profile.d/nix.sh ]; then . /home/andrew/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+
+# Set up the prompt
+eval "$(starship init zsh)"

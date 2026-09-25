@@ -17,15 +17,9 @@
 -- hl.env("WLR_DRM_DEVICES","/dev/dri/card1" )
 
 package.path = package.path .. ";.~/.dotnet/dotnet"
-hl.env("WLR_RENDERER", "gles2")
-hl.env("WLR_NO_HARDWARE_CURSORS", 1)
-hl.env("AQ_NO_MODIFIERS", 1)
-hl.env("WLR_DRM_NO_ATOMIC", 1)
 
 hl.env("XDG_SESSION_TYPE", "wayland")
-
 hl.env("XDG_CURRENT_DESKTOP", "Hyprland")
-
 hl.env("XDG_SESSION_DESKTOP", "Hyprland")
 
 ------------------
@@ -57,17 +51,13 @@ hl.monitor({
 	-- disabled = true,
 })
 
-hl.bind(
-	"switch:lid switch",
-	hl.dsp.exec_cmd("hyprctl eval 'hl.monitor({ output = \"eDP-1\", disabled = true })'"),
-	{ locked = true }
-)
+hl.bind("switch:on:Lid Switch", function()
+	hl.monitor({ output = "eDP-1", disabled = true })
+end, { locked = true })
 
-hl.bind(
-	"switch:off:lid switch",
-	hl.dsp.exec_cmd("hyprctl eval 'hl.monitor({ output = \"eDP-1\", disabled = false, mode = preferred, position = 0x0 })'"),
-	{ locked = true }
-)
+hl.bind("switch:off:Lid Switch", function()
+	hl.monitor({ output = "eDP-1", disabled = false })
+end, { locked = true })
 
 ---------------------
 ---- MY PROGRAMS ----
@@ -97,6 +87,8 @@ hl.on("hyprland.start", function()
 	hl.exec_cmd("nextcloud --background")
 	hl.exec_cmd("wl-paste --type text --watch cliphist store")
 	hl.exec_cmd("wl-paste --type image --watch cliphist store")
+	-- hl.exec_cmd("gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'")
+
 end)
 -------------------------------
 ---- ENVIRONMENT VARIABLES ----
@@ -370,7 +362,7 @@ hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"), { locked = true 
 
 -- custom
 
-hl.bind(mainMod .. " + " .. "B", hl.dsp.exec_cmd("brave"))
+hl.bind(mainMod .. " + " .. "B", hl.dsp.exec_cmd("brave-browser"))
 
 hl.bind(mainMod .. " + " .. "W", hl.dsp.exec_cmd("codium"))
 
